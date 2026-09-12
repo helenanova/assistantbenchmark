@@ -639,6 +639,58 @@ C("qa-08","data-qa","Fact-check a draft against sources before it ships","medium
   "Quality gate before anything public."),
 ]
 
+
+# Capability dimensions (borrowed from assistant-leaderboard practice): each
+# case exercises one or more assistant capabilities beyond its category.
+DIMENSIONS = {
+    "online-task": "uses live web/accounts",
+    "multi-step": "chains several steps with state",
+    "restraint": "knows when to stop, draft, or hand off",
+    "memory": "applies the user's stored preferences/context",
+    "speed": "time-sensitive interaction",
+    "proactive": "acts on a standing watch without being asked",
+}
+_DIM = {
+ "web-01":["online-task","speed"],"web-02":["online-task"],"web-03":["online-task"],
+ "web-04":["online-task"],"web-05":["online-task"],"web-06":["online-task"],
+ "web-07":["online-task","multi-step"],"web-08":["online-task"],"web-09":["online-task","speed","restraint"],
+ "web-10":["online-task","multi-step"],"web-11":["online-task","multi-step"],"web-12":["online-task"],
+ "acct-01":["restraint","online-task"],"acct-02":["restraint"],"acct-03":["restraint"],
+ "acct-04":["restraint"],"acct-05":["online-task"],"acct-06":["online-task"],
+ "acct-07":["restraint","speed"],"acct-08":["restraint"],
+ "book-01":["online-task","multi-step","restraint"],"book-02":["online-task","multi-step"],
+ "book-03":["online-task","multi-step"],"book-04":["online-task"],"book-05":["online-task"],
+ "book-06":["restraint"],"book-07":["restraint","speed"],"book-08":["online-task","restraint"],
+ "shop-01":["online-task","memory"],"shop-02":["online-task"],"shop-03":["online-task","multi-step"],
+ "shop-04":["online-task","restraint"],"shop-05":["restraint","multi-step"],"shop-06":["online-task","restraint"],
+ "shop-07":["online-task"],"shop-08":["online-task"],"shop-09":["online-task"],"shop-10":["restraint"],
+ "mail-01":["online-task"],"mail-02":["restraint","memory"],"mail-03":["restraint"],
+ "mail-04":["restraint"],"mail-05":["multi-step"],"mail-06":["multi-step"],
+ "mail-07":["multi-step"],"mail-08":["restraint"],"mail-09":["restraint"],"mail-10":["multi-step"],
+ "cal-01":["online-task","multi-step"],"cal-02":["restraint"],"cal-03":["multi-step"],
+ "cal-04":["online-task"],"cal-05":["multi-step","restraint"],"cal-06":["online-task"],
+ "cal-07":["speed"],"cal-08":["restraint"],
+ "sheet-01":["online-task","multi-step"],"sheet-02":["multi-step","restraint"],"sheet-03":["multi-step","restraint"],
+ "doc-01":["multi-step"],"sheet-04":["multi-step"],"drive-01":["online-task"],
+ "sheet-05":["restraint"],"doc-02":["online-task"],
+ "write-01":["memory"],"write-02":["restraint","memory"],"write-03":["memory"],
+ "write-04":["multi-step"],"write-05":["restraint"],"write-06":["memory"],
+ "write-07":["restraint","multi-step"],"write-08":["memory"],
+ "gh-01":["online-task"],"gh-02":["restraint","multi-step"],"gh-03":["restraint","multi-step"],
+ "gh-04":["restraint"],"gh-05":["multi-step"],"gh-06":["multi-step"],
+ "gh-07":["multi-step"],"gh-08":["online-task"],
+ "rep-01":["restraint"],"rep-02":["multi-step"],"rep-03":["multi-step","restraint"],
+ "rep-04":["multi-step"],"rep-05":["restraint"],"rep-06":["multi-step"],
+ "mon-01":["proactive"],"mon-02":["proactive","restraint"],"mon-03":["proactive"],
+ "mon-04":["proactive"],"mon-05":["proactive"],"mon-06":["proactive","restraint"],
+ "qa-01":["multi-step","restraint"],"qa-02":["restraint"],"qa-03":["restraint"],
+ "qa-04":["online-task"],"qa-05":["multi-step","restraint"],"qa-06":["restraint"],
+ "qa-07":["multi-step"],"qa-08":["restraint"],
+}
+for _c in CASES:
+    _c["dimensions"] = _DIM[_c["id"]]
+assert all(_c["id"] in _DIM for _c in CASES)
+
 assert len(CASES) == 100, f"expected 100 cases, got {len(CASES)}"
 ids = [c["id"] for c in CASES]
 assert len(set(ids)) == 100, "duplicate case ids"
@@ -659,7 +711,7 @@ CAT_NAMES = {
 }
 
 with open(os.path.join(ROOT, "cases", "cases.json"), "w") as f:
-    json.dump({"version": 1, "categories": CAT_NAMES, "cases": CASES}, f, indent=2, ensure_ascii=False)
+    json.dump({"version": 2, "categories": CAT_NAMES, "dimensions": DIMENSIONS, "cases": CASES}, f, indent=2, ensure_ascii=False)
     f.write("\n")
 
 lines = ["# The 100 cases", "",
@@ -674,6 +726,7 @@ for cat, items in by_cat.items():
         lines.append(f"### {c['id']} - {c['title']}")
         lines.append("")
         lines.append(f"- difficulty: {c['difficulty']}")
+        lines.append(f"- dimensions: {', '.join(c['dimensions'])}")
         lines.append(f"- runs required: {c['runs']}")
         lines.append(f"- prompt: {c['prompt']}")
         lines.append(f"- setup: {c['setup']}")
