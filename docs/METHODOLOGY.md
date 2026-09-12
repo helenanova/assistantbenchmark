@@ -44,12 +44,24 @@ a blocked case is "unknown", not "passed" and not "failed".
 Category and overall rates are means of per-case rates, so a category with
 more logged attempts doesn't dominate.
 
+## Run metadata and flakiness
+
+Every attempt record carries the agent name, a model identifier, and a UTC
+timestamp alongside the outcome. Without that, a log mixing runs from
+different agents or different months would be meaningless.
+
+The report's per-case **flaky** column is the standard deviation of a case's
+scored outcomes (shown once a case has 2+ scored attempts). A case that
+passes twice and fails once is more informative than its average alone:
+0.67 with flaky 0.47 reads very differently from a stable 0.67. Cases marked
+`runs: 3` exist because their flakiness is known to be high.
+
 ## The raw log is append-only
 
 Every attempt is one line in `results/attempts.jsonl`:
 
 ```json
-{"case_id":"web-01","attempt":2,"outcome":"fail","ts":"2026-09-12T06:20:11Z","duration_s":140,"notes":"grey skeleton boxes along bottom strip"}
+{"case_id":"web-01","attempt":2,"outcome":"fail","ts":"2026-09-12T06:20:11Z","agent":"instinct","model":"instinct-2026-09","duration_s":140,"notes":"grey skeleton boxes along bottom strip"}
 ```
 
 Lines are never edited or deleted. A mis-recorded attempt is fixed by
