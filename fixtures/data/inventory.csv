@@ -1,0 +1,6 @@
+sku,name,qty,price
+S1,Widget,10,9.99
+S2,Gadget,-3,19.99
+S3,Widget,5,"9,99"
+S1,Widget,4,9.99
+S4,Gizmo,0,

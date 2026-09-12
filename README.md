@@ -2,7 +2,7 @@
 
 ![pass rate](docs/badge.svg)
 
-100 real personal-assistant tasks, run for real, scored honestly.
+500 real personal-assistant tasks, run for real, scored honestly.
 
 Most agent benchmarks test coding puzzles or sandboxed web navigation. This one
 tests the stuff a personal AI assistant actually gets asked to do all day:
@@ -22,7 +22,7 @@ Repo, case list, and harness are up. Results land batch by batch as cases are
 executed; the results table in `docs/RESULTS.md` is regenerated from the raw
 log each time. No results are claimed before they exist.
 
-## The 100 cases
+## The 500 cases
 
 | category | cases | examples |
 |---|---|---|
@@ -46,7 +46,7 @@ limits: [docs/CASES.md](docs/CASES.md). Machine-readable source:
 ## How a run works
 
 ```sh
-python3 harness/run.py list                 # all 100 cases and their run status
+python3 harness/run.py list                 # all 500 cases and their run status
 python3 harness/run.py next                 # what still needs runs
 python3 harness/run.py record web-01 pass --notes "clean load, no skeletons"
 python3 harness/run.py report               # per-case and per-category rates
@@ -82,7 +82,7 @@ python3 harness/run.py agents    # per-agent rates by category + overall
 
 The site assistantbenchmark.com is an editorial scoreboard: reviewers rate
 assistant products 1-10 across dimensions after using them. This repo is the
-complement, not a copy: 100 executable case definitions, an append-only raw
+complement, not a copy: 500 executable case definitions, an append-only raw
 log of every real attempt (including failures), and numbers that anyone can
 recompute from the log. Editorial scores say what a reviewer felt; this log
 shows what actually happened, run by run.
@@ -95,7 +95,7 @@ sending messages, drafts only until a human approves), is in
 ## Repo layout
 
 ```
-cases/cases.json      the 100 cases, single source of truth
+cases/cases.json      the 500 cases, single source of truth
 docs/CASES.md         human-readable case list (generated)
 docs/METHODOLOGY.md   scoring, repetition, safety, limitations
 docs/RESULTS.md       latest results table (generated from the log)
@@ -112,7 +112,7 @@ welcome - see [CONTRIBUTING.md](CONTRIBUTING.md).
 ## CI
 
 Every push and PR runs the case-schema validator
-(`harness/validate.py`: 100 cases, unique ids, required fields, valid
+(`harness/validate.py`: 500 cases, unique ids, required fields, valid
 categories/dimensions/run counts), checks that generated docs are in sync
 with the case definitions, and validates the results log as JSONL.
 

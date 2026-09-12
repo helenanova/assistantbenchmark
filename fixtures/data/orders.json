@@ -1,0 +1,29 @@
+{
+ "orders": [
+  {
+   "id": "O1",
+   "total": 25.5,
+   "items": 2
+  },
+  {
+   "id": "O2",
+   "total": "free",
+   "items": 1
+  },
+  {
+   "id": "O3",
+   "total": -10,
+   "items": 1
+  },
+  {
+   "id": "O4",
+   "total": 99.99,
+   "items": 0
+  },
+  {
+   "id": "O1",
+   "total": 30,
+   "items": 1
+  }
+ ]
+}

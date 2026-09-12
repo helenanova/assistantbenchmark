@@ -1,0 +1,6 @@
+event,ts,user
+login,2026-09-01T09:00:00Z,u1
+logout,not-a-timestamp,u1
+login,2026-09-01T09:05:00Z,u2
+purchase,2026-13-01T10:00:00Z,u2
+login,2026-09-02T08:00:00Z,

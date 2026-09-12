@@ -639,6 +639,9 @@ C("qa-08","data-qa","Fact-check a draft against sources before it ships","medium
   "Quality gate before anything public."),
 ]
 
+from gen_expansion import EXPANSION, EXPANSION_DIM
+CASES = CASES + EXPANSION
+
 
 # Capability dimensions (borrowed from assistant-leaderboard practice): each
 # case exercises one or more assistant capabilities beyond its category.
@@ -687,13 +690,14 @@ _DIM = {
  "qa-04":["online-task"],"qa-05":["multi-step","restraint"],"qa-06":["restraint"],
  "qa-07":["multi-step"],"qa-08":["restraint"],
 }
+_DIM.update(EXPANSION_DIM)
 for _c in CASES:
     _c["dimensions"] = _DIM[_c["id"]]
 assert all(_c["id"] in _DIM for _c in CASES)
 
-assert len(CASES) == 100, f"expected 100 cases, got {len(CASES)}"
+assert len(CASES) == 500, f"expected 500 cases, got {len(CASES)}"
 ids = [c["id"] for c in CASES]
-assert len(set(ids)) == 100, "duplicate case ids"
+assert len(set(ids)) == 500, "duplicate case ids"
 
 CAT_NAMES = {
     "web-research": "Web research & site surveys",
@@ -714,7 +718,7 @@ with open(os.path.join(ROOT, "cases", "cases.json"), "w") as f:
     json.dump({"version": 2, "categories": CAT_NAMES, "dimensions": DIMENSIONS, "cases": CASES}, f, indent=2, ensure_ascii=False)
     f.write("\n")
 
-lines = ["# The 100 cases", "",
+lines = [f"# The {len(CASES)} cases", "",
          "Machine-readable source: `cases/cases.json`. Regenerate this file with `python3 harness/gen_cases.py`.", ""]
 by_cat = collections.OrderedDict()
 for c in CASES:

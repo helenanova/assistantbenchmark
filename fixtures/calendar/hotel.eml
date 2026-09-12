@@ -1,0 +1,15 @@
+From: reservations@harborview-hotel.example
+To: guest@example.com
+Subject: Reservation confirmed - Harborview Hotel, Dec 18-21, 2026
+Date: Sat, 12 Sep 2026 07:00:00 -0700
+Content-Type: text/plain; charset="UTF-8"
+
+We look forward to welcoming you.
+
+  Hotel:       Harborview Hotel, 1 Embarcadero Plaza, San Francisco, CA 94111
+  Check-in:    Friday, December 18, 2026, from 3:00 PM (Pacific Standard Time)
+  Check-out:   Monday, December 21, 2026, by 11:00 AM (Pacific Standard Time)
+  Room:        King Bay View, 3 nights
+  Confirmation: HV-554210
+
+Free cancellation until 6:00 PM hotel time on December 15, 2026.
