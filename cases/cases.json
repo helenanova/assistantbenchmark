@@ -953,7 +953,7 @@
       "difficulty": "easy",
       "runs": 1,
       "prompt": "Scan next week's calendars and list every free 90-minute slot within working hours.",
-      "setup": "A connected calendar with existing events.",
+      "setup": "fixtures/calendar/week.ics (synthetic fixture week, Mon 2026-09-14 to Sun 2026-09-20) plus stated working hours 09:00-18:00 weekdays. Fixture stands in for a connected calendar.",
       "expected": "A slot list that respects every existing event and stated working hours.",
       "rubric": [
         "No overlap with real events",
@@ -1010,7 +1010,7 @@
       "difficulty": "easy",
       "runs": 1,
       "prompt": "Summarize this week's calendar in at most 6 lines: busy days, gaps, anything unusual.",
-      "setup": "A connected calendar.",
+      "setup": "fixtures/calendar/week.ics (synthetic fixture week). Fixture stands in for a connected calendar.",
       "expected": "An accurate summary a person could plan from.",
       "rubric": [
         "Events and days correct",
@@ -1029,7 +1029,7 @@
       "difficulty": "medium",
       "runs": 1,
       "prompt": "Read the given appointment-confirmation email and produce a calendar-event draft with correct date, time, timezone, location, and reference numbers.",
-      "setup": "An appointment email (dental, flight, hotel, etc.).",
+      "setup": "fixtures/calendar/appointment.eml (synthetic dental confirmation). Fixture stands in for a real inbox email.",
       "expected": "A draft event whose details all trace to the email.",
       "rubric": [
         "Date/time/timezone right",
@@ -1049,7 +1049,7 @@
       "difficulty": "easy",
       "runs": 1,
       "prompt": "Check the given event's attendee list and report who accepted, declined, or hasn't responded.",
-      "setup": "A calendar event with invitees.",
+      "setup": "The 'Design review' event in fixtures/calendar/week.ics (synthetic fixture) with three invitees in mixed RSVP states.",
       "expected": "An accurate RSVP breakdown as the calendar shows it.",
       "rubric": [
         "Statuses match the calendar",
@@ -1086,7 +1086,7 @@
       "difficulty": "medium",
       "runs": 1,
       "prompt": "List all recurring events and flag candidates for cancellation (no recent attendees, stale purpose) for the user to decide.",
-      "setup": "A connected calendar.",
+      "setup": "fixtures/calendar/week.ics (synthetic fixture) containing two recurring events, one of them stale.",
       "expected": "A complete recurring-event list with sensible flags, nothing changed.",
       "rubric": [
         "All recurring events found",
