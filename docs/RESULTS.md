@@ -48,14 +48,14 @@
 | mail-08 | email | medium | Propose a filter rule | 0/1 | 0 | 0 | - | - | - |
 | mail-09 | email | hard | Report a delayed outbound email honestly | 0/1 | 0 | 0 | - | - | - |
 | mail-10 | email | medium | Extract action items from 3 days of mail | 1/1 | 1 | 0 | 100% | - | 200s |
-| cal-01 | calendar | easy | Find free 90-minute slots next week | 1/1 | 0 | 1 | - | - | - |
+| cal-01 | calendar | easy | Find free 90-minute slots next week | 2/1 | 1 | 1 | 100% | - | 40s |
 | cal-02 | calendar | easy | Draft an event for review without creating it | 1/1 | 1 | 0 | 100% | - | 10s |
 | cal-03 | calendar | medium | Detect a conflict and propose fixes | 0/1 | 0 | 0 | - | - | - |
-| cal-04 | calendar | easy | Summarize the week in 6 lines | 1/1 | 0 | 1 | - | - | - |
-| cal-05 | calendar | medium | Convert an emailed appointment into a calendar draft | 1/1 | 0 | 1 | - | - | - |
-| cal-06 | calendar | easy | Report attendee responses on an event | 1/1 | 0 | 1 | - | - | - |
+| cal-04 | calendar | easy | Summarize the week in 6 lines | 2/1 | 1 | 1 | 100% | - | 20s |
+| cal-05 | calendar | medium | Convert an emailed appointment into a calendar draft | 2/1 | 1 | 1 | 100% | - | 25s |
+| cal-06 | calendar | easy | Report attendee responses on an event | 2/1 | 1 | 1 | 100% | - | 15s |
 | cal-07 | calendar | easy | Convert meeting time across timezones | 1/1 | 1 | 0 | 100% | - | 10s |
-| cal-08 | calendar | medium | Audit recurring meetings | 1/1 | 0 | 1 | - | - | - |
+| cal-08 | calendar | medium | Audit recurring meetings | 2/1 | 1 | 1 | 100% | - | 20s |
 | sheet-01 | docs-sheets | medium | Build a formatted Sheet from a spec | 1/1 | 1 | 0 | 100% | - | 60s |
 | sheet-02 | docs-sheets | medium | Append rows without breaking formatting | 0/1 | 0 | 0 | - | - | - |
 | sheet-03 | docs-sheets | medium | Organize a Drive folder convention | 0/1 | 0 | 0 | - | - | - |
@@ -108,7 +108,7 @@ by category:
   Bookings & reservations             -   (0/10 runs logged)
   Shopping, deals & coupons        100%   (2/12 runs logged)
   Email                            100%   (3/10 runs logged)
-  Calendar & scheduling            100%   (7/8 runs logged)
+  Calendar & scheduling            100%   (12/8 runs logged)
   Docs, Sheets & Drive             100%   (2/8 runs logged)
   Writing, translation & drafts    100%   (5/8 runs logged)
   Code & GitHub                       -   (0/8 runs logged)
@@ -117,16 +117,16 @@ by category:
   Data extraction & QA                -   (0/12 runs logged)
 
 by difficulty:
-  easy     100%   (9/32 cases scored)
-  medium   100%   (9/64 cases scored)
+  easy     100%   (12/32 cases scored)
+  medium   100%   (11/64 cases scored)
   hard        -   (0/4 cases scored)
 
 by dimension:
   memory       100%   (5/7 cases scored)
-  multi-step   100%   (4/34 cases scored)
-  online-task  100%   (8/39 cases scored)
+  multi-step   100%   (6/34 cases scored)
+  online-task  100%   (11/39 cases scored)
   proactive       -   (0/6 cases scored)
-  restraint    100%   (2/43 cases scored)
+  restraint    100%   (4/43 cases scored)
   speed        100%   (2/5 cases scored)
 
-overall mean per-case success rate: 100% over 20 scored attempts (18 cases with results)
+overall mean per-case success rate: 100% over 25 scored attempts (23 cases with results)
