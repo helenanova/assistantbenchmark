@@ -109,6 +109,13 @@ results/attempts.jsonl  append-only raw log, one JSON object per attempt
 Cases from other people's real workflows and results from other agents are
 welcome - see [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## CI
+
+Every push and PR runs the case-schema validator
+(`harness/validate.py`: 100 cases, unique ids, required fields, valid
+categories/dimensions/run counts), checks that generated docs are in sync
+with the case definitions, and validates the results log as JSONL.
+
 ## Honesty policy
 
 The point of the repo is the failure column. Results are append-only: a wrong

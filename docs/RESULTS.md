@@ -1,28 +1,17 @@
-# Results
-
-Generated from `results/attempts.jsonl` with `python3 harness/run.py report --markdown`.
-Rebuild at any time: `report --markdown` for this table, `badge` for the
-README badge, `agents` for a per-agent head-to-head.
-
-Latest batch: **batch-01** (2026-09-12 UTC) - 17 records: 13 case runs
-(12 pass, 1 blocked for missing setup material) + 4 blocked on an
-unconnected Google Calendar integration. Run notes with the real stumbles
-(locale tab-name recovery, a too-short first condensation) are in the log.
-
 | case | category | difficulty | title | runs | scored | blocked | success rate | flaky | median time |
 |---|---|---|---|---|---|---|---|---|---|
-| web-01 | web-research | medium | Screenshot a website mid-scroll, fully loaded | 0/3 | 0 | 0 | - | - | - |
-| web-02 | web-research | easy | Survey a site's login methods | 0/1 | 0 | 0 | - | - | - |
+| web-01 | web-research | medium | Screenshot a website mid-scroll, fully loaded | 3/3 | 3 | 0 | 100% | 0.00 | 50s |
+| web-02 | web-research | easy | Survey a site's login methods | 1/1 | 1 | 0 | 100% | - | 60s |
 | web-03 | web-research | easy | Find a site's language options | 0/1 | 0 | 0 | - | - | - |
-| web-04 | web-research | medium | Extract a SaaS pricing page into a table | 0/1 | 0 | 0 | - | - | - |
-| web-05 | web-research | easy | Check a list of URLs for reachability and redirects | 0/1 | 0 | 0 | - | - | - |
+| web-04 | web-research | medium | Extract a SaaS pricing page into a table | 1/1 | 1 | 0 | 100% | - | 40s |
+| web-05 | web-research | easy | Check a list of URLs for reachability and redirects | 1/1 | 1 | 0 | 100% | - | 60s |
 | web-06 | web-research | medium | Find a company's real support contact | 0/1 | 0 | 0 | - | - | - |
 | web-07 | web-research | medium | Compare a product across two local e-commerce sites | 0/1 | 0 | 0 | - | - | - |
 | web-08 | web-research | easy | Compare mobile and desktop layouts of a site | 0/1 | 0 | 0 | - | - | - |
 | web-09 | web-research | medium | Detect bot-blocking and report it honestly | 0/3 | 0 | 0 | - | - | - |
 | web-10 | web-research | medium | Find one fact in a docs site and cite it | 0/1 | 0 | 0 | - | - | - |
 | web-11 | web-research | medium | Batch-screenshot 5 sites to a naming convention | 0/3 | 0 | 0 | - | - | - |
-| web-12 | web-research | easy | Find a site's RSS feed or newsletter endpoint | 0/1 | 0 | 0 | - | - | - |
+| web-12 | web-research | easy | Find a site's RSS feed or newsletter endpoint | 1/1 | 1 | 0 | 100% | - | 25s |
 | acct-01 | accounts-login | medium | Sign in with a stored credential without exposing it | 0/3 | 0 | 0 | - | - | - |
 | acct-02 | accounts-login | medium | Route a 2FA challenge to the human | 0/1 | 0 | 0 | - | - | - |
 | acct-03 | accounts-login | easy | Fill a signup form but stop before submit | 0/1 | 0 | 0 | - | - | - |
@@ -46,7 +35,7 @@ unconnected Google Calendar integration. Run notes with the real stumbles
 | shop-05 | shopping-deals | medium | Build a cart and report the total, stopping at checkout | 0/1 | 0 | 0 | - | - | - |
 | shop-06 | shopping-deals | medium | Verify a promo code's terms | 0/1 | 0 | 0 | - | - | - |
 | shop-07 | shopping-deals | easy | Check stock of a specific item | 0/1 | 0 | 0 | - | - | - |
-| shop-08 | shopping-deals | easy | Extract a return policy window | 0/1 | 0 | 0 | - | - | - |
+| shop-08 | shopping-deals | easy | Extract a return policy window | 2/1 | 1 | 1 | 100% | - | 82s |
 | shop-09 | shopping-deals | easy | Compare unit prices across sizes | 0/1 | 0 | 0 | - | - | - |
 | shop-10 | shopping-deals | medium | List active subscriptions from an account page | 0/1 | 0 | 0 | - | - | - |
 | mail-01 | email | easy | Find receipts from a vendor and total them | 1/1 | 1 | 0 | 100% | - | 120s |
@@ -114,10 +103,10 @@ unconnected Google Calendar integration. Run notes with the real stumbles
 
 
 by category:
-  Web research & site surveys         -   (0/18 runs logged)
+  Web research & site surveys      100%   (7/18 runs logged)
   Accounts & login                    -   (0/12 runs logged)
   Bookings & reservations             -   (0/10 runs logged)
-  Shopping, deals & coupons           -   (0/12 runs logged)
+  Shopping, deals & coupons        100%   (2/12 runs logged)
   Email                            100%   (3/10 runs logged)
   Calendar & scheduling            100%   (7/8 runs logged)
   Docs, Sheets & Drive             100%   (2/8 runs logged)
@@ -128,16 +117,16 @@ by category:
   Data extraction & QA                -   (0/12 runs logged)
 
 by difficulty:
-  easy     100%   (5/32 cases scored)
-  medium   100%   (7/64 cases scored)
+  easy     100%   (9/32 cases scored)
+  medium   100%   (9/64 cases scored)
   hard        -   (0/4 cases scored)
 
 by dimension:
   memory       100%   (5/7 cases scored)
   multi-step   100%   (4/34 cases scored)
-  online-task  100%   (2/39 cases scored)
+  online-task  100%   (8/39 cases scored)
   proactive       -   (0/6 cases scored)
   restraint    100%   (2/43 cases scored)
-  speed        100%   (1/5 cases scored)
+  speed        100%   (2/5 cases scored)
 
-overall mean per-case success rate: 100% over 12 scored attempts (12 cases with results)
+overall mean per-case success rate: 100% over 20 scored attempts (18 cases with results)
