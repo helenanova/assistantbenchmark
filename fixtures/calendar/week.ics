@@ -1,0 +1,76 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//assistantbenchmark//fixture week//EN
+X-WR-CALNAME:Fixture Week (synthetic)
+X-WR-TIMEZONE:America/Los_Angeles
+BEGIN:VEVENT
+UID:standup-1@fixture.assistantbenchmark
+SUMMARY:Daily standup
+DTSTART;TZID=America/Los_Angeles:20260914T090000
+DTEND;TZID=America/Los_Angeles:20260914T093000
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR
+ORGANIZER;CN=Helena:mailto:helena@example.com
+ATTENDEE;CN=Sam;PARTSTAT=ACCEPTED:mailto:sam@example.com
+ATTENDEE;CN=Priya;PARTSTAT=ACCEPTED:mailto:priya@example.com
+END:VEVENT
+BEGIN:VEVENT
+UID:design-1@fixture.assistantbenchmark
+SUMMARY:Design review
+DTSTART;TZID=America/Los_Angeles:20260914T140000
+DTEND;TZID=America/Los_Angeles:20260914T153000
+ORGANIZER;CN=Helena:mailto:helena@example.com
+ATTENDEE;CN=Sam;PARTSTAT=ACCEPTED:mailto:sam@example.com
+ATTENDEE;CN=Priya;PARTSTAT=DECLINED:mailto:priya@example.com
+ATTENDEE;CN=Alex;PARTSTAT=NEEDS-ACTION:mailto:alex@example.com
+END:VEVENT
+BEGIN:VEVENT
+UID:oneonone-1@fixture.assistantbenchmark
+SUMMARY:1:1 with manager
+DTSTART;TZID=America/Los_Angeles:20260915T100000
+DTEND;TZID=America/Los_Angeles:20260915T110000
+END:VEVENT
+BEGIN:VEVENT
+UID:focus-1@fixture.assistantbenchmark
+SUMMARY:Focus block
+DTSTART;TZID=America/Los_Angeles:20260916T093000
+DTEND;TZID=America/Los_Angeles:20260916T110000
+END:VEVENT
+BEGIN:VEVENT
+UID:vendor-1@fixture.assistantbenchmark
+SUMMARY:Vendor call - Northwind
+DTSTART;TZID=America/Los_Angeles:20260916T130000
+DTEND;TZID=America/Los_Angeles:20260916T143000
+END:VEVENT
+BEGIN:VEVENT
+UID:gym-1@fixture.assistantbenchmark
+SUMMARY:Gym
+DTSTART;TZID=America/Los_Angeles:20260917T150000
+DTEND;TZID=America/Los_Angeles:20260917T160000
+END:VEVENT
+BEGIN:VEVENT
+UID:lunch-1@fixture.assistantbenchmark
+SUMMARY:Team lunch
+DTSTART;TZID=America/Los_Angeles:20260918T110000
+DTEND;TZID=America/Los_Angeles:20260918T120000
+END:VEVENT
+BEGIN:VEVENT
+UID:sync-1@fixture.assistantbenchmark
+SUMMARY:Project sync
+DTSTART;TZID=America/Los_Angeles:20260918T140000
+DTEND;TZID=America/Los_Angeles:20260918T160000
+END:VEVENT
+BEGIN:VEVENT
+UID:market-1@fixture.assistantbenchmark
+SUMMARY:Farmers market
+DTSTART;TZID=America/Los_Angeles:20260919T100000
+DTEND;TZID=America/Los_Angeles:20260919T113000
+END:VEVENT
+BEGIN:VEVENT
+UID:legacy-1@fixture.assistantbenchmark
+SUMMARY:Legacy status meeting
+DTSTART;TZID=America/Los_Angeles:20260917T170000
+DTEND;TZID=America/Los_Angeles:20260917T173000
+RRULE:FREQ=WEEKLY;BYDAY=TH
+DESCRIPTION:Old vendor sync; purpose unclear since the project wrapped.
+END:VEVENT
+END:VCALENDAR
