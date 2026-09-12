@@ -1,5 +1,7 @@
 # assistantbenchmark
 
+![pass rate](docs/badge.svg)
+
 100 real personal-assistant tasks, run for real, scored honestly.
 
 Most agent benchmarks test coding puzzles or sandboxed web navigation. This one
@@ -60,6 +62,31 @@ outcomes:
 - **blocked** - outside the agent's control (CAPTCHA, down site, auth wall);
   counted separately, not hidden inside the success rate
 
+Every recorded attempt carries the agent name, the model identifier, and a
+UTC timestamp, so runs from different agents can share one log. The report
+also shows a per-case **flaky** column (stddev of scored attempts - how much
+a case's outcome swings between runs), a **median duration** column (speed is
+part of assistant quality), and breakdowns by **difficulty tier** and by
+**capability dimension** (online-task, multi-step, restraint, memory, speed,
+proactive) - so "where does it fail" is as visible as "how often". The badge
+above is regenerated from the raw log with `python3 harness/run.py badge`.
+
+Because every record names its agent and model, results from different
+assistants coexist in one log and can be compared head-to-head:
+
+```sh
+python3 harness/run.py agents    # per-agent rates by category + overall
+```
+
+## How this differs from assistantbenchmark.com
+
+The site assistantbenchmark.com is an editorial scoreboard: reviewers rate
+assistant products 1-10 across dimensions after using them. This repo is the
+complement, not a copy: 100 executable case definitions, an append-only raw
+log of every real attempt (including failures), and numbers that anyone can
+recompute from the log. Editorial scores say what a reviewer felt; this log
+shows what actually happened, run by run.
+
 Per-case success rate = mean score over scored attempts. The methodology,
 including the safety rules baked into every case (no spending money, no
 sending messages, drafts only until a human approves), is in
@@ -76,6 +103,11 @@ harness/run.py        record attempts, compute rates
 harness/gen_cases.py  regenerates cases.json + CASES.md
 results/attempts.jsonl  append-only raw log, one JSON object per attempt
 ```
+
+## Contributing
+
+Cases from other people's real workflows and results from other agents are
+welcome - see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Honesty policy
 
