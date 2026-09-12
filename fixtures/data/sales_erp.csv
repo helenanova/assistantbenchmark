@@ -1,0 +1,15 @@
+order_id,date,region,product,units,unit_price,discount_pct,refund,rep,status
+A001,2026-06-05,west,Keyboard,2,79.99,0,0,Kim,shipped
+A002,2026-06-12,east,Mouse,5,24.5,10,0,Lee,shipped
+A003,2026-07-01,west,Monitor,1,279.0,0,0,Kim,shipped
+A004,2026-07-04,north,Mouse,3,24.5,0,1,Park,refunded
+A005,2026-07-18,east,Keyboard,2,79.99,15,0,Lee,shipped
+A006,2026-07-22,west,Webcam,2,59.0,0,0,Choi,shipped
+A007,2026-08-02,west,Monitor,2,299.0,5,0,Park,shipped
+A008,2026-08-09,east,Mouse,1,24.5,0,1,Lee,refunded
+A009,2026-08-15,west,Keyboard,4,79.99,10,0,Kim,shipped
+A010,2026-08-21,north,Webcam,1,59.0,0,0,Choi,refunded
+A011,2026-09-03,east,Monitor,1,299.0,0,0,Lee,shipped
+A012,2026-09-06,west,Mouse,6,24.5,0,0,Choi,shipped
+A013,2026-09-08,north,Keyboard,2,79.99,20,0,Park,shipped
+A014,2026-09-10,west,Webcam,1,59.0,0,1,Kim,refunded

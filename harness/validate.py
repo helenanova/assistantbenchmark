@@ -20,8 +20,8 @@ def main():
     cases = data.get("cases", [])
     cats = data.get("categories", {})
     dims = data.get("dimensions", {})
-    if len(cases) != 100:
-        errors.append(f"expected 100 cases, found {len(cases)}")
+    if len(cases) != 500:
+        errors.append(f"expected 500 cases, found {len(cases)}")
     ids = [c.get("id") for c in cases]
     dupes = {i for i in ids if ids.count(i) > 1}
     if dupes:

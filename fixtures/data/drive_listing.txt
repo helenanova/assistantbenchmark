@@ -1,0 +1,14 @@
+path,size_mb,modified
+/contract_acme_2024.pdf,2.1,2024-11-02
+/contract_acme_2025.pdf,2.3,2025-11-15
+/contract_globex_draft.pdf,1.8,2026-01-20
+/taxes/2023_return.pdf,4.5,2024-04-10
+/taxes/2024_return.pdf,4.7,2025-04-09
+/taxes/2024_w2.pdf,0.4,2025-01-31
+/photos/IMG_4021.jpg,3.2,2026-03-14
+/photos/IMG_4022.jpg,3.1,2026-03-14
+/videos/recital.mp4,184.0,2026-05-02
+/notes.txt,0.01,2026-06-19
+/contract_acme_2024.pdf,2.1,2024-11-02
+/resume_v7.docx,0.09,2025-09-30
+/old_projects/backup_2019.zip,512.0,2019-07-22

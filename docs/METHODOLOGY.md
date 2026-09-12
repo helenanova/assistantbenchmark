@@ -2,7 +2,7 @@
 
 ## Where the cases come from
 
-All 100 cases are abstracted from real tasks a personal assistant was actually
+The 500 cases are abstracted from real tasks a personal assistant was actually
 asked to do: site surveys with screenshot rules, coupon clipping, inbox
 triage, booking research, Korean/English drafting, repo maintenance, standing
 monitors. Names and private details were replaced with generic placeholders.
@@ -89,6 +89,7 @@ Real assistant work touches real accounts, so the cases carry limits:
 - Rubric judgment for pass/partial involves a human-grade call. The rubrics
   are written to be checkable, but borderline calls exist; notes on each
   attempt record the reasoning.
-- 100 cases drawn from one person's workflows over-represent that person's
-  life (Korean/English drafting, K-pop fandom tooling, grocery coupons).
-  Contributions of cases from other daily workflows are welcome.
+- The 100 base cases drawn from one person's workflows over-represent that person's
+  life (Korean/English drafting, K-pop fandom tooling, grocery coupons); the 400
+  expansion variants broaden coverage across sites and datasets but share family
+  templates. Contributions of cases from other daily workflows are welcome.
