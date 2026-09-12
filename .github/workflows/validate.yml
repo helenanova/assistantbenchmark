@@ -1,0 +1,29 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  cases:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate case schema
+        run: python3 harness/validate.py
+      - name: Check generated docs are in sync
+        run: |
+          python3 harness/gen_cases.py
+          git diff --exit-code cases/cases.json docs/CASES.md || \
+            (echo "::error::cases.json/docs are stale - run python3 harness/gen_cases.py and commit the result" && exit 1)
+      - name: Results log is valid JSONL
+        run: |
+          test ! -f results/attempts.jsonl || python3 -c "
+          import json,sys
+          for i, line in enumerate(open('results/attempts.jsonl'), 1):
+              line = line.strip()
+              if line: json.loads(line)
+          print('attempts.jsonl: all lines valid JSON')"
